@@ -12,6 +12,7 @@ def _b_to_str(s):
         return s.decode().strip()
     return s
 
+
 class ShapeRecord:
     def __init__(self, fields_dict):
         self.plate_id = int(fields_dict['PLATEID1'])
@@ -29,16 +30,6 @@ class ShapefileWrapper:
     def __init__(self, shapefile_path):
         self.json_dump = []
         self.sf = shapefile.Reader(shapefile_path)
-        # print(self.sf.fields)
-
-        # record_list = list(self.sf.iterRecords())
-        shape_list = list(self.sf.iterShapes())
-        # length = len(shape_list)
-
-        # self.types_dict = defaultdict(lambda: 0)
-        # for i in range(0, length):
-        #     record_type = record_list[i][1]
-        #     self.types_dict[record_type] += 1
 
     def __to_record_dict(self, record):
         """
