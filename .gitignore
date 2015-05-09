@@ -1,0 +1,4 @@
+.idea/
+*.pyc
+*.pyo
+gplates-data/shp.json
