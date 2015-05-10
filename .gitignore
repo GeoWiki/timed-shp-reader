@@ -2,3 +2,5 @@
 *.pyc
 *.pyo
 gplates-data/shp.json
+gplates-data/**/*.gz
+gplates-data/**/*.zip
