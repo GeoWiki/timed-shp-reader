@@ -64,10 +64,19 @@ def test(self):
 
 if __name__ == '__main__':
     # test()
-    shape_file_path = "./earthbyte/ContinentalPolygons/Shapefile/Seton_etal_ESR2012_ContinentalPolygons_2012.1.shp"
+    # shape_file_path = "./earthbyte/ContinentalPolygons/Shapefile/Seton_etal_ESR2012_ContinentalPolygons_2012.1.shp"
     # shape_file_path = "./cshapes/cshapes.shp"
+    shape_file_path = "./chgis/v4_time_prov_pgn_utf.shp "
     wrapper = ShapefileWrapper(shape_file_path)
-    print('record_iter', '\n'.join([str(r) for r in earthbyte_json_iter(wrapper)]))
 
-    with open('shp.json', 'w') as outfile:
-        json.dump(earthbyte_json_iter(wrapper), outfile, indent=2)
+    # print('record_iter', '\n'.join([str(r) for r in wrapper.record_iter()]))
+    # country_years = [
+    #     {'name': r['CNTRY_NAME'], 'y1': r['COWSYEAR'], 'y2':r['GWSYEAR'],}
+    #     for r in wrapper.record_iter()
+    # ]
+    # country_years = [str(c) for c in sorted(country_years, key=lambda x:x['name'])]
+    # print('record_iter', '\n'.join(country_years))
+    print('record_iter', '\n'.join([str(c) for c in wrapper.record_iter()]))
+
+    # with open('shp.json', 'w') as outfile:
+    #     json.dump(earthbyte_json_iter(wrapper), outfile, indent=2)
